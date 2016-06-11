@@ -14,9 +14,44 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        .valor-debito{
+            color:red
+        }
+        
+        .valor-credito{
+            color: blue
+        }
+    </style>
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
+    <script src="js/jquery-3.0.0.min.js"></script>
+    
+    <script type="text/javascript">
+        
+        $(document).ready(funtion(){
+            $.getJSconsole.log(dados);ON('model/30dias.php', function(dados){
+            console.log(dados);
+            
+            $(dados).each(function(ind),elem){
+                console.log(elem);
+            }
+            var tr = $('<tr>' +
+                  '<td>' +elem.data+'</td>' +
+                  '<td>' +elem.descricao+'</td>' +
+                  '<td>' +elem.categoria+'</td>' +
+                  '<td>' +elem.tipo+'</td>' +
+                  '<td class="'+classVAlor+'"> R$ ' +elem.valor+ '</td>'+
+                  '</tr>');
+                  
+                  
+                </tr>
+           
+            });
+        };
+    </script>
 
    
   </head>
@@ -41,9 +76,7 @@
             <li><a href="#">Profile</a></li>
             <li><a href="#">Help</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
+            
         </div>
       </div>
     </nav>
@@ -52,7 +85,7 @@
       <div class="row">
         
         <div class="col-sm-9 col-md-10">
-          <h1 class="page-header">Dashboard</h1>
+          <h1 class="page-header">Painel Financeiro</h1>
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
@@ -83,15 +116,16 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Data</th>
+                  <th>Descricao</th>
+                  <th>Categoriar</th>
+                  <th>Tipo</th>
+                  <th>Valor</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>1,001</td>
+                  <td>10</td>
                   <td>Lorem</td>
                   <td>ipsum</td>
                   <td>dolor</td>
@@ -209,15 +243,6 @@
       </div>
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="../../assets/js/vendor/holder.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
   </body>
 </html>
